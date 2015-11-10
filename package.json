@@ -1,0 +1,24 @@
+{
+  "name": "generator-unicron",
+  "version": "1.0.0",
+  "description": "Generator to reduce the pain caused to A/A devs while developing in unicron",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "acklen",
+    "avenue",
+    "A/A",
+    "unicron"
+  ],
+  "files": [
+    "unicron",
+  ],
+  "author": "Viktor Zavala (viktor@acklenavenue.com)",
+  "license": "ISC",
+  "dependencies": {
+    "yeoman-generator": "^0.21.1"
+  }
+}
