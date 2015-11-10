@@ -14,7 +14,7 @@
     "unicron"
   ],
   "files": [
-    "unicron",
+    "generators/app"
   ],
   "author": "Viktor Zavala (viktor@acklenavenue.com)",
   "license": "ISC",
