@@ -21,9 +21,12 @@ module.exports = generators.Base.extend({
         }.bind(this));
       },
       writing: function(){
+        console.log("source: " + this.sourceRoot());
+        console.log('destination: ' + this.destinationPath(this.appname + '/src/index.html'));
+        this.directory('../unicron', this.destinationPath(this.appname));
         this.fs.copyTpl(
-          this.templatePath('./unicron/src/index.html'),
-          this.destinationPath(this.appname + '/index.html'),
+          this.templatePath('./index.html'),
+          this.destinationPath(this.appname + '/src/index.html'),
           {title : this.title}
         );
       }
