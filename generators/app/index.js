@@ -101,7 +101,6 @@ module.exports = generators.Base.extend({
         );
       },
       install: function(){
-        this.npmInstall(['node-inspector', 'bower', 'gulp', 'typescript', 'tsd', 'phantomjs', 'tslint', 'karma', 'karma-cli'], {'global': true});
         this.installDependencies();
       }
   });

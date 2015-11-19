@@ -1,6 +1,6 @@
 {
   "name": "generator-unicron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generator to reduce the pain caused to A/A devs while developing in unicron",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,11 @@
     "acklen",
     "avenue",
     "A/A",
-    "unicron"
+    "unicron",
+    "angular",
+    "gulp",
+    "typescript",
+    "express"
   ],
   "files": [
     "generators/app"
