@@ -10,6 +10,7 @@ Unicron is a front-end boilerplate developed by Acklen Avenue. To read more abou
     - Install Python 2.7
         `choco install python -version 2.7.2`
 - Install global dependencies `npm install -g node-inspector bower gulp typescript tsd phantomjs tslint karma karma-cli grunt-cli yo `   
+
 ### Start using
 - Install yeoman generator `npm install -g generator-unicron`
 - Run generator `yo unicron <Application name>`
