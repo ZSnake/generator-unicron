@@ -1,6 +1,6 @@
 {
   "name": "generator-unicron",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generator to reduce the pain caused to A/A devs while developing in unicron",
   "main": "index.js",
   "scripts": {
