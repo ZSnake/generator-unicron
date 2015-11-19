@@ -101,6 +101,8 @@ module.exports = generators.Base.extend({
         );
       },
       install: function(){
+        var npmdir = process.cwd() + '/' + this.appname;
+        process.chdir(npmdir);
         this.installDependencies();
       }
   });
