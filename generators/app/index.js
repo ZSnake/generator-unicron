@@ -10,24 +10,67 @@ module.exports = generators.Base.extend({
       },
       prompting: function () {
         var done = this.async();
-        this.prompt({
+        this.prompt([{
           type    : 'input',
-          name    : 'title',
+          name    : 'name',
           message : 'Your project title',
-          default : this.appname // Default to current folder name
-        }, function (answers) {
-          this.title = answers.title
+          default : this.appname
+        },
+        {
+          type    : 'input',
+          name    : 'description',
+          message : 'Your project description here'
+        },{
+          type    : 'input',
+          name    : 'author',
+          message : 'Application Author',
+          store   : true
+        },
+        {
+          type    : 'input',
+          name    : 'homepage',
+          message : 'Your projects homepage'
+        },
+        {
+          type    : 'input',
+          name    : 'repositoryType',
+          message : 'Your project repository type',
+          default : 'git'
+        },
+        {
+          type    : 'input',
+          name    : 'repository',
+          message : 'Your project repository URL: '
+        }], function (answers) {
+          this.name = answers.name
+          this.description = answers.description;
+          this.author = answers.author;
+          this.homepage = answers.homepage;
+          this.repositoryType = answers.repositoryType;
+          this.repository = answers.repository;
           done();
         }.bind(this));
       },
       writing: function(){
-        console.log("source: " + this.sourceRoot());
-        console.log('destination: ' + this.destinationPath(this.appname + '/src/index.html'));
-        this.directory('../unicron', this.destinationPath(this.appname));
+        this.directory('./unicron_files', this.destinationPath(this.appname));
+
         this.fs.copyTpl(
-          this.templatePath('./index.html'),
+          this.templatePath('./unicron_templates/index.html'),
           this.destinationPath(this.appname + '/src/index.html'),
-          {title : this.title}
+          {name : this.name}
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('./unicron_templates/package.json'),
+          this.destinationPath(this.appname + '/package.json'),
+          {
+            name : this.name,
+            description : this.description,
+            author : this.author,
+            homepage : this.homepage,
+            repositoryType : this.repositoryType,
+            repository : this.repository
+          }
         );
       }
   });
