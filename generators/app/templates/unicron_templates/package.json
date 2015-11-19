@@ -2,7 +2,10 @@
   "name": "<%= name %>",
   "version": "0.0.1",
   "description": "<%= description %>",
-  "authors": ["<%=author%>"
+  "authors": [
+    "Dante Dubon",
+    "Luis Nunez",
+    "<%=author%>"
   ],
   "license": "MIT",
   "homepage": "<%= homepage %>",

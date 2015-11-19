@@ -72,5 +72,32 @@ module.exports = generators.Base.extend({
             repository : this.repository
           }
         );
+
+        this.fs.copyTpl(
+          this.templatePath('./unicron_templates/bower.json'),
+          this.destinationPath(this.appname + '/bower.json'),
+          {
+            name : this.name,
+            description : this.description,
+            author : this.author,
+            homepage : this.homepage,
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('./unicron_templates/appveyor.yml'),
+          this.destinationPath(this.appname + '/appveyor.yml'),
+          {
+            name : this.name,
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('./unicron_templates/rakefile.rb'),
+          this.destinationPath(this.appname + '/rakefile.rb'),
+          {
+            name : this.name,
+          }
+        );
       }
   });
