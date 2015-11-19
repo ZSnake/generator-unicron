@@ -52,7 +52,7 @@ module.exports = generators.Base.extend({
         }.bind(this));
       },
       writing: function(){
-        this.directory('./unicron_files', this.destinationPath(this.appname));
+        this.directory('./unicron', this.destinationPath(this.appname));
 
         this.fs.copyTpl(
           this.templatePath('./unicron_templates/index.html'),
