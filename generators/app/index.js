@@ -103,8 +103,8 @@ module.exports = generators.Base.extend({
       install: function(){
         var npmdir = process.cwd() + '/' + this.appname;
         process.chdir(npmdir);
-        this.npmInstall();
         this.spawnCommand('tsd', ['install', '--save', '--overwrite']);
+        this.npmInstall();
         this.bowerInstall();
       }
   });
