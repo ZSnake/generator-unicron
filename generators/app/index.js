@@ -51,8 +51,12 @@ module.exports = generators.Base.extend({
           done();
         }.bind(this));
       },
+      cloning: function(){
+        this.spawnCommand('git', ['clone', 'https://github.com/AcklenAvenue/unicron.git']);
+        this.spawnCommand('mv', ['unicron', this.appname]);
+      },
       writing: function(){
-        this.directory('./unicron', this.destinationPath(this.appname));
+        //this.directory('./unicron', this.destinationPath(this.appname));
 
         this.fs.copyTpl(
           this.templatePath('./unicron_templates/index.html'),
